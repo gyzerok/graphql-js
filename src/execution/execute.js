@@ -112,7 +112,7 @@ export function execute(
 ): Promise<ExecutionResult> {
   invariant(schema, 'Must provide schema');
   invariant(
-    schema instanceof GraphQLSchema,
+    GraphQLSchema.isPrototypeOf(schema),
     'Schema must be an instance of GraphQLSchema. Also ensure that there are ' +
     'not multiple versions of GraphQL installed in your node_modules directory.'
   );
